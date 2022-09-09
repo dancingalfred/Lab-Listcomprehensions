@@ -20,23 +20,24 @@ listOfCountriesWithPopulationsName = [countrie.Namn for countrie in countries if
 print(listOfCountriesWithPopulationsName)
 
 #2
-listOfCountriesNameLenght15 = [countrie.Namn for countrie in countries if len(countrie.Namn) >= 15]
-
-print(listOfCountriesNameLenght15)
+listOfCountriesNameLenght15 = [countrie for countrie in countries if len(countrie.Namn) >= 15]
+for x in listOfCountriesNameLenght15:
+    print(x.Namn, " ", x.Population)
 
 #3
-listOfCountriesNameStartsWithA = [countrie.Namn for countrie in countries if countrie.Namn.startswith("A") or countrie.Capital.startswith("A")]
+listOfCountriesNameStartsWithA = [countrie for countrie in countries if countrie.Namn.startswith("A") or countrie.Capital.startswith("A")]
 
-print(listOfCountriesNameStartsWithA)
+for x in listOfCountriesNameStartsWithA:
+    print(x.Namn, " ", x.Capital)
 
 #4
-listOfCountriesThatSpeakEnglish = [countrie.Namn for countrie in countries if countrie.Langages == "English"]
+listOfCountriesThatSpeakEnglish = [countrie for countrie in countries if countrie.Langages == "English"]
 
-print(listOfCountriesThatSpeakEnglish)
+for x in listOfCountriesThatSpeakEnglish:
+    print(x.Namn, " ", x.Capital)
 
 #5
 listOfCountrieLettersWithPopLessThen1000000 = [countrie.Namn[0] for countrie in countries if countrie.Population < 1000000]
 newLettersList = "".join(listOfCountrieLettersWithPopLessThen1000000)
-
 
 print(newLettersList)
